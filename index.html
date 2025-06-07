@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Prima</title>
+    <style>
+      body {
+        font-family: "Neue Montreal", sans-serif;
+        /* Mobile gradient (default) */
+        background: linear-gradient(176.12deg, #ffffff 7.92%, #21268e 98.23%);
+      }
+
+      @media (min-width: 768px) {
+        body {
+          /* Desktop gradient */
+          background: linear-gradient(
+            162.55deg,
+            rgba(255, 255, 255, 0.5) 12.76%,
+            rgba(33, 38, 142, 0.5) 93.98%
+          );
+        }
+      }
+    </style>
+  </head>
+
+  <body class="h-screen w-full">
+    <div class="m-4 sm:m-10">
+      <!-- logo -->
+      <div class="">
+        <img
+          class="max-md:hidden md:block"
+          src="/public/Asset 4 1.svg"
+          alt="Logo"
+        />
+        <img
+          class="max-md:blcok md:hidden"
+          src="/public/Layer 1.svg"
+          alt="Logo"
+        />
+      </div>
+
+      <!-- filter row-->
+      <div class="md:mx-auto w-full md:w-3xl md:mt-10 mt-4 bg-testblue">
+        <div class="mt-2.5 flex gap-1 md:gap-4">
+          <!-- Date Picker (5/12) -->
+          <div
+            class="basis-[41.66%] px-2.5 py-3.5 md:p-4 rounded-[20px] bg-white flex items-center"
+          >
+            <img src="./public/Date.svg" alt="Date" />
+            <p class="text-sm text-black font-medium ml-1">Jun. 5, 2025</p>
+          </div>
+
+          <!-- Time Picker (4/12) -->
+          <div
+            class="basis-[33.33%] px-2.5 py-3.5 md:p-4 rounded-[20px] bg-white flex items-center"
+          >
+            <img src="./public/Timee.svg" alt="Time" />
+            <p class="text-sm text-black font-medium ml-1">7:30 PM</p>
+          </div>
+
+          <!-- Selected (2/12) -->
+          <div
+            class="basis-[16.66%] px-2.5 py-3.5 md:p-4 rounded-[20px] bg-white flex items-center"
+          >
+            <img src="./public/chair.svg" alt="Chair" />
+            <p class="text-sm text-black font-medium ml-1">2</p>
+          </div>
+
+          <!-- Filter (1/12) -->
+          <div
+            class="basis-[8.33%] flex items-center justify-center hover:cursor-pointer"
+          >
+            <div
+              id="filterButton"
+              onclick="togglePopup()"
+              class="relative px-2.5 py-3.5 md:p-4 rounded-[20px] bg-white"
+            >
+              <img
+                src="./public/Filter.svg"
+                alt="Filter"
+                class="min-w-[24px]"
+              />
+            </div>
+          </div>
+          <!-- Popup Box -->
+          <div
+            id="filterPopup"
+            class="hidden absolute w-[92vw] md:w-[370px] h-auto bg-white rounded-[20px] shadow-lg p-3 z-50 md:right-60 md:top-42"
+          >
+            <div class="grid grid-cols-2 gap-2">
+              <div class="relative">
+                <span
+                  class="pointer-events-none absolute left-0 top-0 flex h-full w-12 items-center justify-center"
+                >
+                  <img src="./public/building.svg" alt="" />
+                </span>
+                <select
+                  name="default-select"
+                  class="w-full appearance-none pl-12 rounded-xl border border-[#38237033] h-[48px]"
+                >
+                  <option
+                    value="Select option 1"
+                    class="text-sm font-medium text-[#00000099]"
+                  >
+                    Neighborhood
+                  </option>
+                  <option value="Select option 2">Select option 2</option>
+                  <option value="Select option 3">Select option 3</option>
+                  <option value="Select option 4">Select option 4</option>
+                </select>
+                <span
+                  class="pointer-events-none absolute right-0 top-0 flex h-full w-12 items-center justify-center"
+                >
+                  <img src="./public/arrow-down.svg" alt="" />
+                </span>
+              </div>
+              <div class="relative">
+                <span
+                  class="pointer-events-none absolute left-0 top-0 flex h-full w-12 items-center justify-center"
+                >
+                  <img src="./public/cuisine.svg" alt="" />
+                </span>
+                <select
+                  name="default-select"
+                  class="w-full appearance-none pl-12 rounded-xl border border-[#38237033] h-[48px]"
+                >
+                  <option
+                    value="Select option 1"
+                    class="text-sm font-medium text-[#00000099]"
+                  >
+                    Cuisine
+                  </option>
+                  <option value="Select option 2">Select option 2</option>
+                  <option value="Select option 3">Select option 3</option>
+                  <option value="Select option 4">Select option 4</option>
+                </select>
+                <span
+                  class="pointer-events-none absolute right-0 top-0 flex h-full w-12 items-center justify-center"
+                >
+                  <img src="./public/arrow-down.svg" alt="" />
+                </span>
+              </div>
+            </div>
+            <div class="relative mt-4">
+              <span
+                class="pointer-events-none absolute left-0 top-0 flex h-full w-12 items-center justify-center"
+              >
+                <img src="./public/speciality.svg" alt="" />
+              </span>
+              <select
+                name="default-select"
+                class="w-full appearance-none pl-12 rounded-xl border border-[#38237033] h-[48px]"
+              >
+                <option
+                  value="Select option 1"
+                  class="text-sm font-medium text-[#00000099]"
+                >
+                  Specialty
+                </option>
+                <option value="Select option 2">Select option 2</option>
+                <option value="Select option 3">Select option 3</option>
+                <option value="Select option 4">Select option 4</option>
+              </select>
+              <span
+                class="pointer-events-none absolute right-0 top-0 flex h-full w-12 items-center justify-center"
+              >
+                <img src="./public/arrow-down.svg" alt="" />
+              </span>
+            </div>
+
+            <button
+              style="
+                background: linear-gradient(
+                  110.1deg,
+                  #8526fa 0%,
+                  #3053cd 102.58%
+                );
+              "
+              class="mt-4 text-white rounded-full px-4 py-2 w-full text-lg"
+            >
+              Apply Filters
+            </button>
+          </div>
+        </div>
+
+        <!-- appointment -->
+        <div class="bg-white p-2.5 rounded-[20px] mt-5">
+          <div class="grid grid-cols-4 md:grid-cols-6 gap-1">
+            <!-- time row -->
+            <div></div>
+            <div
+              class="text-[#00000080] font-normal flex justify-center items-center"
+            >
+              7:00 PM
+            </div>
+            <div
+              class="text-[#000000] font-bold flex justify-center items-center"
+            >
+              7:30 PM
+            </div>
+            <div
+              class="text-[#00000080] font-normal flex justify-center items-center"
+            >
+              8:00 PM
+            </div>
+            <div
+              class="text-[#00000080] font-normal hidden md:flex justify-center items-center"
+            >
+              8:30 PM
+            </div>
+            <div
+              class="text-[#00000080] font-normal justify-center items-center hidden md:flex"
+            >
+              9:00 PM
+            </div>
+          </div>
+          <!-- company 1  row -->
+          <div class="grid grid-cols-4 md:grid-cols-6 gap-x-1 my-2.5">
+            <div>
+              <img src="./public/Com Logo.svg" alt="" />
+            </div>
+            <div
+              style="
+                background: linear-gradient(180deg, #6dadfb 0%, #4d8ddc 100%);
+              "
+              class="text-white flex justify-center items-center rounded-2xl text-sm font-medium h-[52px]"
+            >
+              No Fee
+            </div>
+            <div
+              style="
+                background: linear-gradient(180deg, #1eb455 0%, #189244 100%);
+              "
+              class="text-white flex justify-center items-center rounded-2xl text-sm font-bold h-[52px]"
+            >
+              $125
+            </div>
+            <div
+              style="
+                background: linear-gradient(180deg, #1eb455 0%, #189244 100%);
+              "
+              class="text-white flex justify-center items-center rounded-2xl text-sm font-bold h-[52px]"
+            >
+              $100
+            </div>
+            <div
+              style="
+                background: linear-gradient(180deg, #1eb455 0%, #189244 100%);
+              "
+              class="text-white hidden md:flex justify-center items-center rounded-2xl text-sm font-bold h-[52px]"
+            >
+              $100
+            </div>
+            <div
+              style="
+                background: linear-gradient(180deg, #1eb455 0%, #189244 100%);
+              "
+              class="text-white hidden md:flex justify-center items-center rounded-2xl text-sm font-bold h-[52px]"
+            >
+              $100
+            </div>
+          </div>
+
+          <!-- company 2  row -->
+          <div class="grid grid-cols-4 md:grid-cols-6 gap-x-1 mb-2.5">
+            <div>
+              <img src="./public/Com Logo.svg" alt="" />
+            </div>
+            <div
+              class="text-[#827F9A] flex justify-center items-center rounded-2xl text-sm font-medium bg-[#E5E5E5] h-[52px]"
+            >
+              SOLD OUT
+            </div>
+            <div
+              class="text-[#827F9A] flex justify-center items-center rounded-2xl text-sm font-medium bg-[#E5E5E5] h-[52px]"
+            >
+              SOLD OUT
+            </div>
+            <div
+              style="
+                background: linear-gradient(180deg, #1eb455 0%, #189244 100%);
+              "
+              class="text-white flex justify-center items-center rounded-2xl text-sm font-bold h-[52px]"
+            >
+              $100
+            </div>
+            <div
+              style="
+                background: linear-gradient(180deg, #1eb455 0%, #189244 100%);
+              "
+              class="text-white hidden md:flex justify-center items-center rounded-2xl text-sm font-bold h-[52px]"
+            >
+              $100
+            </div>
+            <div
+              style="
+                background: linear-gradient(180deg, #1eb455 0%, #189244 100%);
+              "
+              class="text-white hidden md:flex justify-center items-center rounded-2xl text-sm font-bold h-[52px]"
+            >
+              $100
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
